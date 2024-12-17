@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WAI-ARIA</title>
+  </head>
+  <body>
+    <!-- Uppgift 1 -->
+    <div
+      id="accessibleModal"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-modal="false"
+    >
+      <h2 id="modalTitle">Exempel på modalfönster</h2>
+      <p>Här är lite text i modalfönstret.</p>
+      <button id="closeModalBtn">Stäng</button>
+    </div>
+    <button id="openModalBtn">Öppna modalfönster</button>
+
+    <!-- Uppgift 2 -->
+    <dialog id="accessibleDialog" aria-labelledby="dialogTitle">
+      <h2 id="dialogTitle">
+        Exempel på tillgängligt modalfönster med &lt;dialog&gt;
+      </h2>
+      <p>Här är innehållet i modalfönstret.</p>
+      <button id="closeDialogBtn">Stäng</button>
+    </dialog>
+    <button id="openDialogBtn">Öppna dialogfönster</button>
+
+    <!-- Fördelar med dialog-elementet är att det har inbyggda tillgänglighetsfunktioner, såsom aria-modal, role="dialog" och aria-hidden, resten av hemsidan ignoreras när dialogrutan är öppen. Det finns även ett inbyggt open attribut som visar om dialogen är öppen eller stängd. Det blir mindre kod än att skriva manuellt med div-element, som i uppgift 1 -->
+
+    <!-- Uppgit 3 -->
+    <button
+      id="menuButton"
+      aria-haspopup="menu"
+      aria-expanded="false"
+      aria-controls="menuContent"
+    >
+      Meny
+    </button>
+    <nav
+      id="menuContent"
+      role="menu"
+      aria-labelledby="menuContent"
+      aria-hidden="true"
+    >
+      <ul>
+        <li><a id="close-menu" role="menuitem" href="#">Stäng</a></li>
+        <li><a role="menuitem" href="#">Hem</a></li>
+        <li><a role="menuitem" href="#">Om oss</a></li>
+        <li><a role="menuitem" href="#">Tjänster</a></li>
+        <li><a role="menuitem" href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
